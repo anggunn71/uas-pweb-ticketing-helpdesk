@@ -1,0 +1,18 @@
+$kind: http-request
+name: http://127.0.0.1:8000/api/kategori-masalahs
+url: http://127.0.0.1:8000/api/kategori-masalahs
+method: POST
+headers:
+  - key: ""
+    value: Accept
+    description: application/json
+body:
+  type: json
+  content: "{\r
+
+    \  \"nama_kategori\": \"Jaringan\",\r
+
+    \  \"deskripsi\": \"Masalah wifi dan internet\"\r
+
+    }"
+order: 1779255609834
