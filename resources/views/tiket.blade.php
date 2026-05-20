@@ -325,7 +325,7 @@
             <a href="#">Klien</a>
             <a href="#">Agen</a>
             <a href="/tiket">Tiket</a>
-            <a href="#">Kategori</a>
+            <a href="/kategori-masalah">Kategori</a>
             <a href="#">Solusi</a>
         </div>
     </div>

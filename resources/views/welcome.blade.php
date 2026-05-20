@@ -103,11 +103,6 @@
             font-weight: bold;
         }
 
-        .btn-primary {
-            background: #ef233c;
-            color: white;
-        }
-
         .btn-secondary {
             background: white;
             color: #111827;
@@ -309,7 +304,7 @@
             <a href="#">Klien</a>
             <a href="#">Agen</a>
             <a href="/tiket">Tiket</a>
-            <a href="#">Kategori</a>
+            <a href="/kategori-masalah">Kategori</a>
             <a href="#">Solusi</a>
         </div>
 
@@ -318,14 +313,19 @@
 
     <div class="hero-content">
         <div class="badge">🎫 Aplikasi Ticketing & Helpdesk</div>
+
         <h1>Kelola Laporan Masalah Lebih Cepat dan Terorganisir</h1>
+
         <p>
-            Sistem TicketDesk membantu klien membuat tiket, agen menangani laporan,
-            serta memantau status masalah sampai mendapatkan solusi terbaik.
+            Sistem TicketDesk membantu klien membuat tiket,
+            agen menangani laporan, serta memantau status
+            masalah sampai mendapatkan solusi terbaik.
         </p>
 
         <div class="hero-actions">
-            <a href="#modul" class="btn btn-secondary">Lihat Semua Modul</a>
+            <a href="#modul" class="btn btn-secondary">
+                Lihat Semua Modul
+            </a>
         </div>
     </div>
 </div>
@@ -335,14 +335,17 @@
         <h2>5</h2>
         <p>Modul Utama</p>
     </div>
+
     <div class="stat">
         <h2>24/7</h2>
         <p>Layanan Bantuan</p>
     </div>
+
     <div class="stat">
         <h2>Open</h2>
         <p>Status Tiket Aktif</p>
     </div>
+
     <div class="stat">
         <h2>Fast</h2>
         <p>Respon Agen</p>
@@ -350,68 +353,127 @@
 </div>
 
 <div class="section" id="modul">
+
     <div class="section-title">
         <h2>Modul Ticketing & Helpdesk</h2>
         <p>Fitur utama kelompok PRJ-05 dalam sistem helpdesk.</p>
     </div>
 
     <div class="modules">
+
         <div class="module-card">
             <div class="icon">👤</div>
+
             <small>PKG-05-1</small>
+
             <h3>Modul Klien</h3>
-            <p>Mengelola data klien atau pengguna yang membuat laporan bantuan.</p>
+
+            <p>
+                Mengelola data klien atau pengguna
+                yang membuat laporan bantuan.
+            </p>
+
             <a href="#">Buka Modul →</a>
         </div>
 
         <div class="module-card">
             <div class="icon">🧑‍💻</div>
+
             <small>PKG-05-2</small>
+
             <h3>Modul Agen</h3>
-            <p>Mengelola data agen yang menangani dan memproses tiket helpdesk.</p>
+
+            <p>
+                Mengelola data agen yang menangani
+                dan memproses tiket helpdesk.
+            </p>
+
             <a href="#">Buka Modul →</a>
         </div>
 
-        <div class="module-card" onclick="window.location.href='/tiket'">
+        <div class="module-card"
+             onclick="window.location.href='/tiket'">
+
             <div class="icon">🎫</div>
+
             <small>PKG-05-3</small>
+
             <h3>Modul Tiket</h3>
-            <p>Mengelola laporan masalah, prioritas, status, dan detail tiket.</p>
+
+            <p>
+                Mengelola laporan masalah,
+                prioritas, status, dan detail tiket.
+            </p>
+
             <a href="/tiket">Buka Modul →</a>
         </div>
 
-        <div class="module-card">
+        <div class="module-card"
+             onclick="window.location.href='/kategori-masalah'">
+
             <div class="icon">📂</div>
+
             <small>PKG-05-4</small>
+
             <h3>Modul Kategori</h3>
-            <p>Mengelompokkan masalah seperti hardware, software, jaringan, dan akun.</p>
-            <a href="#">Buka Modul →</a>
+
+            <p>
+                Mengelompokkan masalah seperti
+                hardware, software, jaringan, dan akun.
+            </p>
+
+            <a href="/kategori-masalah">
+                Buka Modul →
+            </a>
         </div>
 
         <div class="module-card">
             <div class="icon">💡</div>
+
             <small>PKG-05-5</small>
+
             <h3>Modul Solusi</h3>
-            <p>Mengelola solusi atau penyelesaian dari setiap tiket yang dilaporkan.</p>
+
+            <p>
+                Mengelola solusi atau penyelesaian
+                dari setiap tiket yang dilaporkan.
+            </p>
+
             <a href="#">Buka Modul →</a>
         </div>
+
     </div>
 
     <div class="workflow">
+
         <div>
             <h2>Alur Kerja Helpdesk</h2>
+
             <p>
-                Setiap laporan akan masuk sebagai tiket, lalu diproses oleh agen
-                berdasarkan kategori dan prioritas masalah.
+                Setiap laporan akan masuk sebagai tiket,
+                lalu diproses oleh agen berdasarkan kategori
+                dan prioritas masalah.
             </p>
         </div>
 
         <div>
-            <div class="step"><b>1.</b> Klien membuat laporan masalah.</div>
-            <div class="step"><b>2.</b> Tiket masuk dengan status Open.</div>
-            <div class="step"><b>3.</b> Agen memproses tiket sesuai kategori.</div>
-            <div class="step"><b>4.</b> Solusi diberikan dan tiket diselesaikan.</div>
+            <div class="step">
+                <b>1.</b> Klien membuat laporan masalah.
+            </div>
+
+            <div class="step">
+                <b>2.</b> Tiket masuk dengan status Open.
+            </div>
+
+            <div class="step">
+                <b>3.</b> Agen memproses tiket sesuai kategori.
+            </div>
+
+            <div class="step">
+                <b>4.</b> Solusi diberikan dan tiket diselesaikan.
+            </div>
         </div>
+
     </div>
 </div>
 

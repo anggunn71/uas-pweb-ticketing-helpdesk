@@ -11,3 +11,7 @@ Route::get('/tiket', [TiketController::class, 'index']);
 Route::post('/tiket', [TiketController::class, 'store']);
 Route::put('/tiket/{id}', [TiketController::class, 'update']);
 Route::delete('/tiket/{id}', [TiketController::class, 'destroy']);
+
+Route::get('/kategori-masalah', function () {
+    return view('kategori-masalah');
+});
