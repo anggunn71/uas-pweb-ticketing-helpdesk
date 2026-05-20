@@ -14,63 +14,86 @@
             color: #1f2937;
         }
 
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #3b223f 45%, #b91c1c 100%);
+            color: white;
+            padding-bottom: 55px;
+        }
+
         .navbar {
-            height: 85px;
-            background: white;
+            height: 82px;
             display: flex;
             align-items: center;
-            padding: 0 70px;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+            padding: 0 90px;
         }
 
         .logo {
-            font-size: 32px;
-            font-weight: 800;
-            color: #e11d48;
-            margin-right: 45px;
+            font-size: 30px;
+            font-weight: 900;
+            color: white;
+            white-space: nowrap;
+            letter-spacing: 1px;
         }
 
+        .logo span { color: #ff4757; }
+
         .menu {
+            margin-left: 70px;
             display: flex;
-            gap: 30px;
+            gap: 34px;
+            align-items: center;
         }
 
         .menu a {
-            color: #374151;
+            color: white;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 800;
             font-size: 17px;
         }
 
-        .hero {
-            background: linear-gradient(135deg, #e11d48, #fb7185);
-            color: white;
-            padding: 55px 70px 90px;
+        .menu a:hover { color: #ff4757; }
+
+        .hero-content {
+            padding: 55px 90px 20px;
+            max-width: 850px;
         }
 
-        .hero h1 {
-            font-size: 42px;
-            margin: 0 0 12px;
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.16);
+            padding: 11px 22px;
+            border-radius: 30px;
+            margin-bottom: 24px;
+            font-weight: 800;
         }
 
-        .hero p {
+        .hero-content h1 {
+            font-size: 44px;
+            line-height: 1.18;
+            margin: 0 0 18px;
+            font-weight: 900;
+        }
+
+        .hero-content p {
             font-size: 18px;
-            margin: 0;
+            line-height: 1.7;
+            color: #f3f4f6;
+            max-width: 780px;
         }
 
         .container {
-            margin: -55px 70px 60px;
+            margin: -35px 90px 60px;
             background: white;
-            border-radius: 22px;
-            padding: 35px;
+            border-radius: 18px;
+            padding: 28px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.12);
         }
 
         .alert {
             background: #dcfce7;
             color: #166534;
-            padding: 14px 18px;
-            border-radius: 12px;
+            padding: 13px 16px;
+            border-radius: 10px;
             margin-bottom: 20px;
             font-weight: bold;
             display: flex;
@@ -87,45 +110,43 @@
             cursor: pointer;
         }
 
-        .error-box {
-            background: #fee2e2;
-            color: #991b1b;
-            padding: 14px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
         .form-title {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .form-title h2 {
             margin: 0;
             font-size: 28px;
+            font-weight: 900;
+            color: #111827;
         }
 
         .badge {
-            background: #ffe4e6;
+            background: #fee2e2;
             color: #dc2626;
-            padding: 14px 28px;
+            padding: 12px 24px;
             border-radius: 40px;
-            font-weight: 800;
-            letter-spacing: 1px;
+            font-weight: 900;
         }
 
         .form-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
+            grid-template-columns: 1fr 1.7fr;
+            gap: 16px 20px;
         }
 
-        .form-group.full { grid-column: span 2; }
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
 
         label {
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 8px;
             display: block;
         }
@@ -133,39 +154,41 @@
         input, textarea, select {
             width: 100%;
             border: 1px solid #d1d5db;
-            border-radius: 14px;
-            padding: 15px;
-            font-size: 16px;
+            border-radius: 8px;
+            padding: 13px;
+            font-size: 15px;
             outline: none;
             background: white;
         }
 
         textarea {
-            min-height: 100px;
+            min-height: 80px;
             resize: vertical;
         }
 
         input:focus, textarea:focus, select:focus {
-            border-color: #e11d48;
-            box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.12);
+            border-color: #ef233c;
+            box-shadow: 0 0 0 4px rgba(239, 35, 60, 0.12);
         }
 
         .btn {
             border: none;
-            border-radius: 12px;
-            padding: 11px 18px;
-            font-size: 15px;
-            font-weight: bold;
+            border-radius: 7px;
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 800;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
         }
 
         .btn-primary {
-            background: #e11d48;
+            background: #dc2626;
             color: white;
-            margin-top: 20px;
+            margin-top: 14px;
         }
+
+        .btn-primary:hover { background: #b91c1c; }
 
         .btn-edit {
             background: #f59e0b;
@@ -182,24 +205,29 @@
             color: #111827;
         }
 
-        .table-box { margin-top: 40px; }
+        .table-box { margin-top: 28px; }
+
+        .table-box h2 {
+            font-size: 28px;
+            margin-bottom: 14px;
+        }
 
         table {
             width: 100%;
             border-collapse: collapse;
             overflow: hidden;
-            border-radius: 14px;
+            border-radius: 10px;
         }
 
         th {
-            background: #e11d48;
+            background: #dc2626;
             color: white;
-            padding: 14px;
+            padding: 13px;
             text-align: left;
         }
 
         td {
-            padding: 14px;
+            padding: 13px;
             border-bottom: 1px solid #e5e7eb;
             vertical-align: top;
         }
@@ -207,7 +235,7 @@
         tr:hover { background: #fff1f2; }
 
         .status {
-            background: #ffe4e6;
+            background: #fee2e2;
             color: #dc2626;
             padding: 6px 12px;
             border-radius: 20px;
@@ -215,14 +243,17 @@
             font-size: 13px;
         }
 
+        .action-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
         .modal {
             display: none;
             position: fixed;
             z-index: 99;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             background: rgba(17, 24, 39, 0.65);
             padding: 40px;
             overflow: auto;
@@ -232,8 +263,8 @@
             background: white;
             max-width: 850px;
             margin: auto;
-            border-radius: 22px;
-            padding: 35px;
+            border-radius: 18px;
+            padding: 30px;
             box-shadow: 0 20px 45px rgba(0,0,0,0.25);
         }
 
@@ -241,13 +272,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 25px;
-        }
-
-        .action-row {
-            display: flex;
-            gap: 8px;
-            align-items: center;
+            margin-bottom: 22px;
         }
 
         .notif-overlay {
@@ -255,7 +280,7 @@
             position: fixed;
             inset: 0;
             background: rgba(17, 24, 39, 0.55);
-            z-index: 999;
+            z-index: 99999;
             justify-content: center;
             align-items: center;
         }
@@ -267,13 +292,12 @@
             padding: 32px;
             border-radius: 26px;
             box-shadow: 0 25px 60px rgba(0,0,0,0.25);
-            animation: popUp 0.25s ease;
         }
 
         .notif-icon {
             width: 72px;
             height: 72px;
-            background: #ffe4e6;
+            background: #fee2e2;
             color: #dc2626;
             border-radius: 50%;
             display: flex;
@@ -283,71 +307,37 @@
             font-size: 34px;
         }
 
-        .notif-box h3 {
-            margin: 8px 0;
-            font-size: 24px;
-        }
-
-        .notif-box p {
-            color: #6b7280;
-            margin-bottom: 24px;
-            line-height: 1.5;
-        }
-
         .notif-actions {
             display: flex;
             justify-content: center;
             gap: 12px;
         }
-
-        @keyframes popUp {
-            from {
-                transform: scale(0.85);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        @media (max-width: 900px) {
-            .navbar, .hero {
-                padding-left: 25px;
-                padding-right: 25px;
-            }
-
-            .container {
-                margin-left: 25px;
-                margin-right: 25px;
-            }
-
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .form-group.full {
-                grid-column: span 1;
-            }
-        }
     </style>
 </head>
 <body>
 
-<div class="navbar">
-    <div class="logo">Helpdesk</div>
-
-    <div class="menu">
-        <a href="/">Dashboard</a>
-        <a href="/tiket">Tiket</a>
-        <a href="#">Kategori</a>
-        <a href="#">Status</a>
-    </div>
-</div>
-
 <div class="hero">
-    <h1>Modul Tiket Helpdesk</h1>
-    <p>Kelola laporan masalah, prioritas, kategori, dan status tiket dengan tampilan yang lebih rapi.</p>
+    <div class="navbar">
+        <div class="logo">Ticket<span>Desk</span></div>
+
+        <div class="menu">
+            <a href="/">Dashboard</a>
+            <a href="#">Klien</a>
+            <a href="#">Agen</a>
+            <a href="/tiket">Tiket</a>
+            <a href="#">Kategori</a>
+            <a href="#">Solusi</a>
+        </div>
+    </div>
+
+    <div class="hero-content">
+        <div class="hero-badge">🎫 Modul Tiket Helpdesk</div>
+        <h1>Kelola Tiket Helpdesk Lebih Cepat dan Terorganisir</h1>
+        <p>
+            Sistem TicketDesk membantu mencatat laporan masalah, menentukan prioritas,
+            mengelompokkan kategori, dan memantau status tiket sampai selesai.
+        </p>
+    </div>
 </div>
 
 <div class="container">
@@ -359,37 +349,28 @@
         </div>
     @endif
 
-    @if($errors->any())
-        <div class="error-box">
-            <b>Data belum lengkap:</b>
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
     <div class="form-title">
         <h2>Tambah Tiket Baru</h2>
-        <div class="badge">Kelola Tiket Helpdesk</div>
+        <div class="badge">CRUD Modul Tiket</div>
     </div>
 
     <form action="/tiket" method="POST">
         @csrf
 
         <div class="form-grid">
-            <div class="form-group full">
+            <div>
                 <label>Judul Tiket</label>
                 <input type="text" name="judul" placeholder="Contoh: Printer tidak bisa mencetak" required>
             </div>
 
-            <div class="form-group full">
+            <div>
                 <label>Deskripsi Masalah</label>
-                <textarea name="deskripsi" placeholder="Jelaskan masalah yang terjadi" required></textarea>
+                <textarea name="deskripsi" placeholder="Tuliskan detail masalah yang terjadi..." required></textarea>
             </div>
+        </div>
 
-            <div class="form-group">
+        <div class="form-row">
+            <div>
                 <label>Kategori</label>
                 <select name="kategori" required>
                     <option value="Hardware">Hardware</option>
@@ -399,7 +380,7 @@
                 </select>
             </div>
 
-            <div class="form-group">
+            <div>
                 <label>Prioritas</label>
                 <select name="prioritas" required>
                     <option value="Rendah">Rendah</option>
@@ -408,7 +389,7 @@
                 </select>
             </div>
 
-            <div class="form-group">
+            <div>
                 <label>Status</label>
                 <select name="status" required>
                     <option value="Open">Open</option>
@@ -418,7 +399,7 @@
             </div>
         </div>
 
-        <button class="btn btn-primary" type="submit">Simpan Tiket</button>
+        <button class="btn btn-primary" type="submit">💾 Simpan Tiket</button>
     </form>
 
     <div class="table-box">
@@ -448,16 +429,12 @@
                         <td><span class="status">{{ $tiket->status }}</span></td>
                         <td>
                             <div class="action-row">
-                                <button class="btn btn-edit" onclick="openModal('modalEdit{{ $tiket->id }}')">
-                                    Edit
-                                </button>
+                                <button class="btn btn-edit" onclick="openModal('modalEdit{{ $tiket->id }}')">Edit</button>
 
                                 <form action="/tiket/{{ $tiket->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="button" class="btn btn-delete" onclick="showDeleteModal(this)">
-                                        Hapus
-                                    </button>
+                                    <button type="button" class="btn btn-delete" onclick="showDeleteModal(this)">Hapus</button>
                                 </form>
                             </div>
                         </td>
@@ -467,7 +444,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h2>Edit Tiket</h2>
-                                <button class="btn btn-close" onclick="closeModal('modalEdit{{ $tiket->id }}')">Tutup</button>
+                                <button type="button" class="btn btn-close" onclick="closeModal('modalEdit{{ $tiket->id }}')">Tutup</button>
                             </div>
 
                             <form action="/tiket/{{ $tiket->id }}" method="POST">
@@ -475,17 +452,19 @@
                                 @method('PUT')
 
                                 <div class="form-grid">
-                                    <div class="form-group full">
+                                    <div>
                                         <label>Judul Tiket</label>
                                         <input type="text" name="judul" value="{{ $tiket->judul }}" required>
                                     </div>
 
-                                    <div class="form-group full">
+                                    <div>
                                         <label>Deskripsi Masalah</label>
                                         <textarea name="deskripsi" required>{{ $tiket->deskripsi }}</textarea>
                                     </div>
+                                </div>
 
-                                    <div class="form-group">
+                                <div class="form-row">
+                                    <div>
                                         <label>Kategori</label>
                                         <select name="kategori" required>
                                             <option value="Hardware" {{ $tiket->kategori == 'Hardware' ? 'selected' : '' }}>Hardware</option>
@@ -495,7 +474,7 @@
                                         </select>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div>
                                         <label>Prioritas</label>
                                         <select name="prioritas" required>
                                             <option value="Rendah" {{ $tiket->prioritas == 'Rendah' ? 'selected' : '' }}>Rendah</option>
@@ -504,7 +483,7 @@
                                         </select>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div>
                                         <label>Status</label>
                                         <select name="status" required>
                                             <option value="Open" {{ $tiket->status == 'Open' ? 'selected' : '' }}>Open</option>
@@ -533,10 +512,9 @@
         <div class="notif-icon">🗑️</div>
         <h3>Hapus Tiket?</h3>
         <p>Data tiket yang sudah dihapus tidak bisa dikembalikan.</p>
-
         <div class="notif-actions">
-            <button onclick="closeDeleteModal()" class="btn btn-close">Batal</button>
-            <button onclick="submitDelete()" class="btn btn-delete">Ya, Hapus</button>
+            <button type="button" onclick="closeDeleteModal()" class="btn btn-close">Batal</button>
+            <button type="button" onclick="submitDelete()" class="btn btn-delete">Ya, Hapus</button>
         </div>
     </div>
 </div>
@@ -551,20 +529,6 @@
     function closeModal(id) {
         document.getElementById(id).style.display = 'none';
     }
-
-    function hapusNotif() {
-        let notif = document.getElementById('notif');
-        if (notif) {
-            notif.style.display = 'none';
-        }
-    }
-
-    setTimeout(function() {
-        let notif = document.getElementById('notif');
-        if (notif) {
-            notif.style.display = 'none';
-        }
-    }, 3000);
 
     function showDeleteModal(button) {
         deleteForm = button.closest('form');
@@ -582,20 +546,15 @@
         }
     }
 
-    window.onclick = function(event) {
-        let modals = document.querySelectorAll('.modal');
-
-        modals.forEach(function(modal) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-
-        let deleteModal = document.getElementById('deleteModal');
-        if (event.target === deleteModal) {
-            closeDeleteModal();
-        }
+    function hapusNotif() {
+        let notif = document.getElementById('notif');
+        if (notif) notif.style.display = 'none';
     }
+
+    setTimeout(function() {
+        let notif = document.getElementById('notif');
+        if (notif) notif.style.display = 'none';
+    }, 3000);
 </script>
 
 </body>
