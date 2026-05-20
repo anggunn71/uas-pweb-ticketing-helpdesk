@@ -2,10 +2,13 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AgenController;
 use App\Http\Controllers\Api\TiketController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
+
+Route::apiResource('agen', AgenController::class);
 
 Route::apiResource('tikets', TiketController::class);

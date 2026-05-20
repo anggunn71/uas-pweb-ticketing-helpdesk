@@ -7,6 +7,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/agen', function () {
+    return view('agen');
+});
+
 Route::get('/tiket', [TiketController::class, 'index']);
 Route::post('/tiket', [TiketController::class, 'store']);
 Route::put('/tiket/{id}', [TiketController::class, 'update']);
