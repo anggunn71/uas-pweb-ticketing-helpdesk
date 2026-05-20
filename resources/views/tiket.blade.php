@@ -5,9 +5,7 @@
     <title>Modul Tiket Helpdesk</title>
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
@@ -18,38 +16,36 @@
 
         .navbar {
             height: 85px;
-            background: #111827;
+            background: white;
             display: flex;
             align-items: center;
-            padding: 0 90px;
-            color: white;
+            padding: 0 70px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.06);
         }
 
         .logo {
-            font-size: 30px;
+            font-size: 32px;
             font-weight: 800;
-        }
-
-        .logo span {
-            color: #ff4757;
+            color: #e11d48;
+            margin-right: 45px;
         }
 
         .menu {
-            margin-left: 55px;
             display: flex;
-            gap: 28px;
+            gap: 30px;
         }
 
         .menu a {
-            color: white;
+            color: #374151;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 17px;
         }
 
         .hero {
-            background: linear-gradient(135deg, #111827, #dc2626);
+            background: linear-gradient(135deg, #e11d48, #fb7185);
             color: white;
-            padding: 55px 90px 90px;
+            padding: 55px 70px 90px;
         }
 
         .hero h1 {
@@ -59,13 +55,13 @@
 
         .hero p {
             font-size: 18px;
-            color: #f3f4f6;
+            margin: 0;
         }
 
         .container {
-            margin: -55px 90px 60px;
+            margin: -55px 70px 60px;
             background: white;
-            border-radius: 20px;
+            border-radius: 22px;
             padding: 35px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.12);
         }
@@ -73,10 +69,22 @@
         .alert {
             background: #dcfce7;
             color: #166534;
-            padding: 14px;
-            border-radius: 10px;
+            padding: 14px 18px;
+            border-radius: 12px;
             margin-bottom: 20px;
             font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-alert {
+            border: none;
+            background: transparent;
+            color: #166534;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
         }
 
         .error-box {
@@ -100,11 +108,12 @@
         }
 
         .badge {
-            background: #fee2e2;
+            background: #ffe4e6;
             color: #dc2626;
-            padding: 10px 16px;
-            border-radius: 30px;
-            font-weight: bold;
+            padding: 14px 28px;
+            border-radius: 40px;
+            font-weight: 800;
+            letter-spacing: 1px;
         }
 
         .form-grid {
@@ -113,12 +122,10 @@
             gap: 18px;
         }
 
-        .form-group.full {
-            grid-column: span 2;
-        }
+        .form-group.full { grid-column: span 2; }
 
         label {
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 8px;
             display: block;
         }
@@ -126,7 +133,7 @@
         input, textarea, select {
             width: 100%;
             border: 1px solid #d1d5db;
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 15px;
             font-size: 16px;
             outline: none;
@@ -139,14 +146,14 @@
         }
 
         input:focus, textarea:focus, select:focus {
-            border-color: #dc2626;
-            box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.12);
+            border-color: #e11d48;
+            box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.12);
         }
 
         .btn {
             border: none;
-            border-radius: 10px;
-            padding: 11px 17px;
+            border-radius: 12px;
+            padding: 11px 18px;
             font-size: 15px;
             font-weight: bold;
             cursor: pointer;
@@ -155,7 +162,7 @@
         }
 
         .btn-primary {
-            background: #ef233c;
+            background: #e11d48;
             color: white;
             margin-top: 20px;
         }
@@ -175,9 +182,7 @@
             color: #111827;
         }
 
-        .table-box {
-            margin-top: 40px;
-        }
+        .table-box { margin-top: 40px; }
 
         table {
             width: 100%;
@@ -187,7 +192,7 @@
         }
 
         th {
-            background: #111827;
+            background: #e11d48;
             color: white;
             padding: 14px;
             text-align: left;
@@ -199,14 +204,12 @@
             vertical-align: top;
         }
 
-        tr:hover {
-            background: #f9fafb;
-        }
+        tr:hover { background: #fff1f2; }
 
         .status {
-            background: #fee2e2;
+            background: #ffe4e6;
             color: #dc2626;
-            padding: 6px 10px;
+            padding: 6px 12px;
             border-radius: 20px;
             font-weight: bold;
             font-size: 13px;
@@ -229,7 +232,7 @@
             background: white;
             max-width: 850px;
             margin: auto;
-            border-radius: 20px;
+            border-radius: 22px;
             padding: 35px;
             box-shadow: 0 20px 45px rgba(0,0,0,0.25);
         }
@@ -241,25 +244,82 @@
             margin-bottom: 25px;
         }
 
-        .modal-header h2 {
-            margin: 0;
-        }
-
         .action-row {
             display: flex;
             gap: 8px;
             align-items: center;
         }
 
+        .notif-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(17, 24, 39, 0.55);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .notif-box {
+            background: white;
+            width: 390px;
+            text-align: center;
+            padding: 32px;
+            border-radius: 26px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+            animation: popUp 0.25s ease;
+        }
+
+        .notif-icon {
+            width: 72px;
+            height: 72px;
+            background: #ffe4e6;
+            color: #dc2626;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 34px;
+        }
+
+        .notif-box h3 {
+            margin: 8px 0;
+            font-size: 24px;
+        }
+
+        .notif-box p {
+            color: #6b7280;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .notif-actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        @keyframes popUp {
+            from {
+                transform: scale(0.85);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
         @media (max-width: 900px) {
             .navbar, .hero {
-                padding-left: 30px;
-                padding-right: 30px;
+                padding-left: 25px;
+                padding-right: 25px;
             }
 
             .container {
-                margin-left: 30px;
-                margin-right: 30px;
+                margin-left: 25px;
+                margin-right: 25px;
             }
 
             .form-grid {
@@ -275,7 +335,7 @@
 <body>
 
 <div class="navbar">
-    <div class="logo">Ticket<span>Desk</span></div>
+    <div class="logo">Helpdesk</div>
 
     <div class="menu">
         <a href="/">Dashboard</a>
@@ -287,13 +347,16 @@
 
 <div class="hero">
     <h1>Modul Tiket Helpdesk</h1>
-    <p>Kelola laporan masalah, prioritas, kategori, dan status tiket dalam satu halaman.</p>
+    <p>Kelola laporan masalah, prioritas, kategori, dan status tiket dengan tampilan yang lebih rapi.</p>
 </div>
 
 <div class="container">
 
     @if(session('success'))
-        <div class="alert">{{ session('success') }}</div>
+        <div class="alert" id="notif">
+            <span>{{ session('success') }}</span>
+            <button onclick="hapusNotif()" class="close-alert">×</button>
+        </div>
     @endif
 
     @if($errors->any())
@@ -309,7 +372,7 @@
 
     <div class="form-title">
         <h2>Tambah Tiket Baru</h2>
-        <div class="badge">CRUD Modul Tiket</div>
+        <div class="badge">Kelola Tiket Helpdesk</div>
     </div>
 
     <form action="/tiket" method="POST">
@@ -392,7 +455,7 @@
                                 <form action="/tiket/{{ $tiket->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-delete" onclick="return confirm('Yakin ingin hapus tiket ini?')">
+                                    <button type="button" class="btn btn-delete" onclick="showDeleteModal(this)">
                                         Hapus
                                     </button>
                                 </form>
@@ -404,9 +467,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h2>Edit Tiket</h2>
-                                <button class="btn btn-close" onclick="closeModal('modalEdit{{ $tiket->id }}')">
-                                    Tutup
-                                </button>
+                                <button class="btn btn-close" onclick="closeModal('modalEdit{{ $tiket->id }}')">Tutup</button>
                             </div>
 
                             <form action="/tiket/{{ $tiket->id }}" method="POST">
@@ -457,7 +518,6 @@
                             </form>
                         </div>
                     </div>
-
                 @empty
                     <tr>
                         <td colspan="7">Belum ada data tiket.</td>
@@ -466,16 +526,60 @@
             </tbody>
         </table>
     </div>
+</div>
 
+<div id="deleteModal" class="notif-overlay">
+    <div class="notif-box">
+        <div class="notif-icon">🗑️</div>
+        <h3>Hapus Tiket?</h3>
+        <p>Data tiket yang sudah dihapus tidak bisa dikembalikan.</p>
+
+        <div class="notif-actions">
+            <button onclick="closeDeleteModal()" class="btn btn-close">Batal</button>
+            <button onclick="submitDelete()" class="btn btn-delete">Ya, Hapus</button>
+        </div>
+    </div>
 </div>
 
 <script>
+    let deleteForm = null;
+
     function openModal(id) {
         document.getElementById(id).style.display = 'block';
     }
 
     function closeModal(id) {
         document.getElementById(id).style.display = 'none';
+    }
+
+    function hapusNotif() {
+        let notif = document.getElementById('notif');
+        if (notif) {
+            notif.style.display = 'none';
+        }
+    }
+
+    setTimeout(function() {
+        let notif = document.getElementById('notif');
+        if (notif) {
+            notif.style.display = 'none';
+        }
+    }, 3000);
+
+    function showDeleteModal(button) {
+        deleteForm = button.closest('form');
+        document.getElementById('deleteModal').style.display = 'flex';
+    }
+
+    function closeDeleteModal() {
+        document.getElementById('deleteModal').style.display = 'none';
+        deleteForm = null;
+    }
+
+    function submitDelete() {
+        if (deleteForm) {
+            deleteForm.submit();
+        }
     }
 
     window.onclick = function(event) {
@@ -486,6 +590,11 @@
                 modal.style.display = 'none';
             }
         });
+
+        let deleteModal = document.getElementById('deleteModal');
+        if (event.target === deleteModal) {
+            closeDeleteModal();
+        }
     }
 </script>
 
