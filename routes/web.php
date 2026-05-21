@@ -23,3 +23,7 @@ Route::delete('/tiket/{id}', [TiketController::class, 'destroy']);
 Route::get('/kategori-masalah', function () {
     return view('kategori-masalah');
 });
+
+Route::get('/solusi', function () {
+    return view('solusi');
+});

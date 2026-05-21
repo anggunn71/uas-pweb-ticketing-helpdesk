@@ -326,7 +326,7 @@
             <a href="/agen">Agen</a>
             <a href="/tiket">Tiket</a>
             <a href="/kategori-masalah">Kategori</a>
-            <a href="#">Solusi</a>
+            <a href="/solusi">Solusi</a>
         </div>
     </div>
 
