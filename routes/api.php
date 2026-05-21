@@ -19,3 +19,4 @@ Route::apiResource('kliens', KlienController::class);
 Route::apiResource('tikets', TiketController::class);
 
 Route::apiResource('kategori-masalahs', KategoriMasalahController::class);
+

@@ -7,6 +7,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/klien', function () {
+    return view('klien');
+});
+
 Route::get('/agen', function () {
     return view('agen');
 });

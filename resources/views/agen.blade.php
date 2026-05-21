@@ -53,7 +53,7 @@ td{padding:13px;border-bottom:1px solid #e5e7eb}
 
         <div class="menu">
             <a href="/">Dashboard</a>
-            <a href="#">Klien</a>
+            <a href="/klien">Klien</a>
             <a href="/agen">Agen</a>
             <a href="/tiket">Tiket</a>
             <a href="/kategori-masalah">Kategori</a>
