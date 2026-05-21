@@ -5,30 +5,32 @@
     <title>Ticketing Helpdesk</title>
 
     <style>
-        * {
-            box-sizing: border-box;
+
+        *{
+            box-sizing:border-box;
         }
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f4f7fb;
-            color: #1f2937;
+        body{
+            margin:0;
+            font-family:'Segoe UI',Arial,sans-serif;
+            background:#f4f7fb;
+            color:#1f2937;
         }
 
-        .hero {
-            min-height: 620px;
+        .hero{
+            min-height:620px;
             background:
-                linear-gradient(135deg, rgba(10, 25, 47, 0.92), rgba(220, 38, 38, 0.88)),
-                url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding-bottom: 60px;
+            linear-gradient(135deg, rgba(10,25,47,.92), rgba(220,38,38,.88)),
+            url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=80');
+
+            background-size:cover;
+            background-position:center;
+            color:white;
+            padding-bottom:60px;
         }
 
         .navbar {
-            height: 85px;
+            height: 82px;
             display: flex;
             align-items: center;
             padding: 0 90px;
@@ -36,7 +38,10 @@
 
         .logo {
             font-size: 30px;
-            font-weight: 800;
+            font-weight: 900;
+            color: white;
+            white-space: nowrap;
+            letter-spacing: 1px;
         }
 
         .logo span {
@@ -44,77 +49,71 @@
         }
 
         .menu {
-            margin-left: 55px;
+            margin-left: 70px;
             display: flex;
-            gap: 28px;
+            gap: 34px;
+            align-items: center;
         }
 
         .menu a {
             color: white;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 800;
+            font-size: 17px;
         }
 
-        .login {
-            margin-left: auto;
-            background: white;
-            color: #dc2626;
-            padding: 12px 20px;
-            border-radius: 30px;
-            font-weight: bold;
+        .menu a:hover {
+            color: #ff4757;
         }
 
         .hero-content {
-            padding: 80px 90px 30px;
+            padding: 55px 90px 20px;
             max-width: 850px;
         }
 
         .badge {
             display: inline-block;
-            background: rgba(255,255,255,0.18);
-            padding: 10px 18px;
+            background: rgba(255,255,255,0.16);
+            padding: 11px 22px;
             border-radius: 30px;
-            margin-bottom: 20px;
-            font-weight: 600;
+            margin-bottom: 24px;
+            font-weight: 800;
         }
 
         .hero-content h1 {
-            font-size: 52px;
-            line-height: 1.15;
-            margin: 0 0 20px;
+            font-size: 44px;
+            line-height: 1.18;
+            margin: 0 0 18px;
+            font-weight: 900;
         }
 
         .hero-content p {
-            font-size: 20px;
+            font-size: 18px;
             line-height: 1.7;
             color: #f3f4f6;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 16px;
-            margin-top: 30px;
+            max-width: 780px;
         }
 
         .btn {
-            padding: 15px 24px;
-            border-radius: 10px;
+            border: none;
+            border-radius: 7px;
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 800;
+            cursor: pointer;
             text-decoration: none;
-            font-weight: bold;
-        }
-
-        .btn-secondary {
+            display: inline-block;
             background: white;
             color: #111827;
         }
 
         .stats {
-            margin: -55px 90px 40px;
+            margin: -35px 90px 40px;
             background: white;
             border-radius: 18px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.12);
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(4,1fr);
             overflow: hidden;
         }
 
@@ -157,7 +156,7 @@
 
         .modules {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(5,1fr);
             gap: 22px;
         }
 
@@ -165,27 +164,15 @@
             background: white;
             border-radius: 18px;
             padding: 26px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,.08);
             cursor: pointer;
-            min-height: 260px;
             position: relative;
-            overflow: hidden;
-        }
-
-        .module-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 6px;
-            width: 100%;
-            background: linear-gradient(90deg, #ef233c, #ff9f1c);
+            transition: .3s;
+            min-height: 260px;
         }
 
         .module-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 18px 35px rgba(0,0,0,0.16);
         }
 
         .icon {
@@ -194,27 +181,13 @@
             background: #fee2e2;
             color: #dc2626;
             border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            margin-bottom: 22px;
-        }
 
-        .module-card small {
-            color: #dc2626;
-            font-weight: bold;
-        }
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:30px;
 
-        .module-card h3 {
-            font-size: 23px;
-            margin: 10px 0;
-        }
-
-        .module-card p {
-            color: #6b7280;
-            line-height: 1.6;
-            font-size: 15px;
+            margin-bottom:22px;
         }
 
         .module-card a {
@@ -236,101 +209,66 @@
             gap: 30px;
         }
 
-        .workflow h2 {
-            margin-top: 0;
-            font-size: 30px;
-        }
-
         .step {
-            background: rgba(255,255,255,0.08);
+            background: rgba(255,255,255,.08);
             padding: 18px;
             border-radius: 14px;
             margin-bottom: 14px;
         }
 
-        .step b {
-            color: #ff9f1c;
-        }
-
-        .floating-chat {
-            position: fixed;
-            right: 45px;
-            bottom: 45px;
-            width: 72px;
-            height: 72px;
-            border-radius: 50%;
-            background: #34c759;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .floating-chat:hover {
-            transform: scale(1.12);
-            background: #28a745;
-        }
-
-        .floating-chat svg {
-            width: 34px;
-            height: 34px;
-        }
-
-        @media (max-width: 1100px) {
-            .modules {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .workflow {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
+
 </head>
+
 <body>
 
 <div class="hero">
+
     <div class="navbar">
-        <div class="logo">Ticket<span>Desk</span></div>
+
+        <div class="logo">
+            Ticket<span>Desk</span>
+        </div>
 
         <div class="menu">
             <a href="/">Dashboard</a>
             <a href="#">Klien</a>
-            <a href="#">Agen</a>
+            <a href="/agen">Agen</a>
             <a href="/tiket">Tiket</a>
             <a href="/kategori-masalah">Kategori</a>
             <a href="#">Solusi</a>
         </div>
 
-        <div class="login">Sign in / Register</div>
     </div>
 
     <div class="hero-content">
-        <div class="badge">🎫 Aplikasi Ticketing & Helpdesk</div>
 
-        <h1>Kelola Laporan Masalah Lebih Cepat dan Terorganisir</h1>
+        <div class="badge">
+            🎫 Aplikasi Ticketing Helpdesk
+        </div>
+
+        <h1>
+            Kelola Laporan Masalah Lebih Cepat dan Terorganisir
+        </h1>
 
         <p>
             Sistem TicketDesk membantu klien membuat tiket,
-            agen menangani laporan, serta memantau status
-            masalah sampai mendapatkan solusi terbaik.
+            agen menangani laporan,
+            serta memantau status masalah sampai mendapatkan solusi terbaik.
         </p>
 
-        <div class="hero-actions">
-            <a href="#modul" class="btn btn-secondary">
-                Lihat Semua Modul
-            </a>
-        </div>
+        <br>
+
+        <a href="#modul" class="btn">
+            Lihat Semua Modul
+        </a>
+
     </div>
+
 </div>
 
 <div class="stats">
+
     <div class="stat">
         <h2>5</h2>
         <p>Modul Utama</p>
@@ -350,18 +288,20 @@
         <h2>Fast</h2>
         <p>Respon Agen</p>
     </div>
+
 </div>
 
 <div class="section" id="modul">
 
     <div class="section-title">
-        <h2>Modul Ticketing & Helpdesk</h2>
+        <h2>Modul Ticketing Helpdesk</h2>
         <p>Fitur utama kelompok PRJ-05 dalam sistem helpdesk.</p>
     </div>
 
     <div class="modules">
 
         <div class="module-card">
+
             <div class="icon">👤</div>
 
             <small>PKG-05-1</small>
@@ -373,10 +313,15 @@
                 yang membuat laporan bantuan.
             </p>
 
-            <a href="#">Buka Modul →</a>
+            <a href="#">
+                Buka Modul →
+            </a>
+
         </div>
 
-        <div class="module-card">
+        <div class="module-card"
+             onclick="window.location.href='/agen'">
+
             <div class="icon">🧑‍💻</div>
 
             <small>PKG-05-2</small>
@@ -384,11 +329,14 @@
             <h3>Modul Agen</h3>
 
             <p>
-                Mengelola data agen yang menangani
-                dan memproses tiket helpdesk.
+                Mengelola data agen helpdesk
+                dan penanganan tiket.
             </p>
 
-            <a href="#">Buka Modul →</a>
+            <a href="/agen">
+                Buka Modul →
+            </a>
+
         </div>
 
         <div class="module-card"
@@ -405,7 +353,10 @@
                 prioritas, status, dan detail tiket.
             </p>
 
-            <a href="/tiket">Buka Modul →</a>
+            <a href="/tiket">
+                Buka Modul →
+            </a>
+
         </div>
 
         <div class="module-card"
@@ -425,9 +376,11 @@
             <a href="/kategori-masalah">
                 Buka Modul →
             </a>
+
         </div>
 
         <div class="module-card">
+
             <div class="icon">💡</div>
 
             <small>PKG-05-5</small>
@@ -439,7 +392,10 @@
                 dari setiap tiket yang dilaporkan.
             </p>
 
-            <a href="#">Buka Modul →</a>
+            <a href="#">
+                Buka Modul →
+            </a>
+
         </div>
 
     </div>
@@ -447,6 +403,7 @@
     <div class="workflow">
 
         <div>
+
             <h2>Alur Kerja Helpdesk</h2>
 
             <p>
@@ -454,9 +411,11 @@
                 lalu diproses oleh agen berdasarkan kategori
                 dan prioritas masalah.
             </p>
+
         </div>
 
         <div>
+
             <div class="step">
                 <b>1.</b> Klien membuat laporan masalah.
             </div>
@@ -472,15 +431,11 @@
             <div class="step">
                 <b>4.</b> Solusi diberikan dan tiket diselesaikan.
             </div>
+
         </div>
 
     </div>
-</div>
 
-<div class="floating-chat">
-    <svg viewBox="0 0 24 24" fill="white">
-        <path d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
-    </svg>
 </div>
 
 </body>
